@@ -67,17 +67,6 @@ else
     echo -e $"\nNew Virtual Host Created\n"
 fi
 
-### Add domain in /etc/hosts
-if ! echo "
-127.0.0.1	$domain
-127.0.0.1	$alias" >> /etc/hosts
-then
-    echo $"ERROR: Not able to write in /etc/hosts"
-    exit 1;
-else
-    echo -e $"Host added to /etc/hosts file \n"
-fi
-
 ### enable website
 a2ensite $domain
 
