@@ -8,7 +8,7 @@ publicHtml="$rootDir/public_html"
 
 ### validate
 if [ "$domain" == "" ]; then
-	echo $"Usage: a2asite domain_name [\"alias_name1 alias_name2\"]"
+	echo $"Usage: sudo a2addsite domain_name [\"alias_name1 alias_name2\"]"
 	exit;
 fi
 if [ "$alias" == "" ]; then
