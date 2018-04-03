@@ -4,6 +4,7 @@ domain=$2
 alias=$3
 email='/dev/null'
 configFile="/etc/apache2/sites-available/$domain.conf"
+sslConfig="$domain-le-ssl.conf"
 rootDir="/var/www/$domain"
 publicHtml="$rootDir/public_html"
 
@@ -101,6 +102,7 @@ else
 
 			### disable website
 			a2dissite $domain
+			a2dissite $sslConfig
 
 			### restart Apache
 			/etc/init.d/apache2 reload
