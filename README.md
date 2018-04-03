@@ -6,9 +6,9 @@ Create a new apache2 vhost with light speed
 
 ```bash
 cd ~
-rm -rf a2addsite_tmp
-git clone https://github.com/mcflythekid/a2addsite.git a2addsite_tmp
-sudo cp -rf ./a2addsite_tmp/a2addsite.sh /usr/local/bin/a2addsite
+rm -rf tmp_a2addsite
+git clone https://github.com/mcflythekid/a2addsite.git tmp_a2addsite
+sudo cp -rf ./tmp_a2addsite/a2addsite.sh /usr/local/bin/a2addsite
 sudo chmod +x /usr/local/bin/a2addsite
 a2addsite
 ```
