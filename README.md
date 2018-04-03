@@ -15,8 +15,8 @@ a2addsite
 ### Usage ###
 
 ```bash
-$ sudo a2asite add domain_name [\"alias_name1 alias_name2\"]
-$ sudo a2asite del domain_name
+$ sudo a2addsite add domain_name [\"alias_name1 alias_name2\"]
+$ sudo a2addsite del domain_name
 ```
 ### Upgrade new version ###
 ```bash
@@ -25,8 +25,8 @@ $ sudo a2addsite upgrade
 ### Example ###
 
 ```bash
-$ sudo a2asite add example.com
-$ sudo a2asite add example.com   www.example.com
-$ sudo a2asite add example.com   "www.example.com www2.example.com"
-$ sudo a2asite del example.com
+$ sudo a2addsite add example.com
+$ sudo a2addsite add example.com   www.example.com
+$ sudo a2addsite add example.com   "www.example.com www2.example.com"
+$ sudo a2addsite del example.com
 ```
