@@ -8,10 +8,6 @@ rootDir="/var/www/$domain"
 publicHtml="$rootDir/public_html"
 
 ### validate
-if [ "$(whoami)" != 'root' ]; then
-	echo -e $"You have no permission to run $0 as non-root user. Use sudo"
-	exit 1;
-fi
 if [ "$action" != "add" ] && [ "$action" != "del" ]; then
 	echo $"Usage:
 	\$ sudo a2addsite add domain_name [alias_name]
@@ -19,6 +15,10 @@ if [ "$action" != "add" ] && [ "$action" != "del" ]; then
 	\$ sudo a2addsite del domain_name
 	"
     exit 0;
+fi
+if [ "$(whoami)" != 'root' ]; then
+	echo -e $"You have no permission to run $0 as non-root user. Use sudo"
+	exit 1;
 fi
 if [ "$domain" == "" ]; then
     echo -e $"Domain is required"
