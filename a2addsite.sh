@@ -10,11 +10,12 @@ rootDir="/var/www/$domain"
 publicHtml="$rootDir/public_html"
 
 ### validate
-if [ "$action" != "add" ] && [ "$action" != "del" ]; then
+if [ "$action" != "add" ] && [ "$action" != "del" ]  && [ "$action" != "upgrade" ]; then
 	echo $"Usage:
 	\$ sudo a2addsite add domain_name [alias_name]
 	\$ sudo a2addsite add domain_name [\"alias_name1 alias_name2\"]
 	\$ sudo a2addsite del domain_name
+	\$ sudo a2addsite upgrade
 	"
     exit 0;
 fi
@@ -22,6 +23,21 @@ if [ "$(whoami)" != 'root' ]; then
 	echo -e $"You have no permission to run $0 as non-root user. Use sudo"
 	exit 1;
 fi
+
+
+### upgrade
+if [ "$action" == 'upgrade' ]; then
+    cd ~
+    rm -rf tmp_a2addsite
+    git clone https://github.com/mcflythekid/a2addsite.git tmp_a2addsite
+    cp -rf ./tmp_a2addsite/a2addsite.sh /usr/local/bin/a2addsite
+    chmod +x /usr/local/bin/a2addsite
+    echo $"Upgraded"
+    exit 0;
+fi
+
+
+### validate for add / del
 if [ "$domain" == "" ]; then
     echo -e $"Domain is required"
     exit 1;
