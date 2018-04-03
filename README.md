@@ -2,7 +2,7 @@
 
 Create a new apache2 vhost with light speed
 
-### Installation / Upgrade ###
+### Installation ###
 
 ```bash
 cd ~
@@ -17,6 +17,7 @@ a2addsite
 ```bash
 $ sudo a2asite add domain_name [\"alias_name1 alias_name2\"]
 $ sudo a2asite del domain_name
+$ sudo a2asite upgrade
 ```
 ### Example ###
 
@@ -39,4 +40,10 @@ Delete a domain
 
 ```bash
 $ sudo a2asite del example.com
+```
+
+Upgrade new version
+
+```bash
+$ sudo a2asite upgrade
 ```
