@@ -18,29 +18,15 @@ a2addsite
 $ sudo a2asite add domain_name [\"alias_name1 alias_name2\"]
 $ sudo a2asite del domain_name
 ```
-### Example ###
-
-Only domain
-
-```bash
-$ sudo add a2asite example.com
-```
-Domain and alias
-
-```bash
-$ sudo a2asite add example.com www.example.com
-```
-Domain and 2 aliases
-
-```bash
-$ sudo a2asite add example.com "www.example.com www2.example.com"
-```
-Delete a domain
-
-```bash
-$ sudo a2asite del example.com
-```
 ### Upgrade new version ###
 ```bash
 $ sudo a2addsite upgrade
 ````
+### Example ###
+
+```bash
+$ sudo add a2asite example.com
+$ sudo a2asite add example.com www.example.com
+$ sudo a2asite add example.com "www.example.com www2.example.com"
+$ sudo a2asite del example.com
+```
