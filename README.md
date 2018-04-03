@@ -25,8 +25,8 @@ $ sudo a2addsite upgrade
 ### Example ###
 
 ```bash
-$ sudo add a2asite example.com
-$ sudo a2asite add example.com www.example.com
-$ sudo a2asite add example.com "www.example.com www2.example.com"
+$ sudo a2asite add example.com
+$ sudo a2asite add example.com   www.example.com
+$ sudo a2asite add example.com   "www.example.com www2.example.com"
 $ sudo a2asite del example.com
 ```
