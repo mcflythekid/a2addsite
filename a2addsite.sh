@@ -14,8 +14,9 @@ if [ "$(whoami)" != 'root' ]; then
 fi
 if [ "$action" != "add" ] && [ "$action" != "del" ]; then
 	echo $"Usage:
-	sudo a2addsite add domain_name [\"alias_name1 alias_name2\"]
-	sudo a2addsite del domain_name
+	\$ sudo a2addsite add domain_name [alias_name]
+	\$ sudo a2addsite add domain_name [\"alias_name1 alias_name2\"]
+	\$ sudo a2addsite del domain_name
 	"
     exit 0;
 fi
