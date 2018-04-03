@@ -5,6 +5,7 @@ alias=$3
 email='/dev/null'
 configFile="/etc/apache2/sites-available/$domain.conf"
 sslConfig="$domain-le-ssl.conf"
+sslConfigFile="/etc/apache2/sites-available/$sslConfig"
 rootDir="/var/www/$domain"
 publicHtml="$rootDir/public_html"
 
@@ -109,6 +110,7 @@ else
 
 			### Delete virtual host rules files
 			rm $configFile
+			rm $sslConfigFile
 
             ### check if directory exists or not
             if [ -d $rootDir ]; then
