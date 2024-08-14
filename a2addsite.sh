@@ -84,7 +84,7 @@ if [ "$action" == 'add' ]; then
             AllowOverride All
         </Directory>
         <Directory $publicHtml>
-            Options Indexes FollowSymLinks MultiViews
+            Options -Indexes +FollowSymLinks +MultiViews
             AllowOverride all
             Require all granted
         </Directory>
