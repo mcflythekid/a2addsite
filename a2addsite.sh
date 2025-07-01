@@ -2,7 +2,6 @@
 action=$1
 domain=$2
 alias=$3
-email='/dev/null'
 configFile="/etc/apache2/sites-available/$domain.conf"
 sslConfig="$domain-le-ssl.conf"
 sslConfigFile="/etc/apache2/sites-available/$sslConfig"
@@ -48,7 +47,7 @@ if [ "$action" == 'add' ]; then
 
     ### validate
     if [ "$alias" == "" ]; then
-        alias=domain
+        alias=""
     fi
     if [ -e $configFile ]; then
         echo -e $"This domain already exists.\nPlease Try Another one"
@@ -76,7 +75,6 @@ if [ "$action" == 'add' ]; then
     ### create virtual host rules file
     if ! echo "
     <VirtualHost *:80>
-        ServerAdmin $email
         ServerName $domain
         ServerAlias $alias
         DocumentRoot $publicHtml
